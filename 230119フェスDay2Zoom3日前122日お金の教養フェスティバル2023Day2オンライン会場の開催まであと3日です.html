@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+<meta http-equiv="Content-Language" content="ja" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="initial-scale=1.0,width=device-width" /> 
+<!--
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+--> 
+<!--[if lt IE 9]>
+<![endif]--> 
+<style type="text/css">
+<!--
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+ padding: 0;
+ margin:0;
+ font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック','MS P Gothic',sans-serif!important;
+}
+body{
+ line-height:100%;
+ font-size:14px;
+ background: #f9f9f9;
+ color: #333333;
+ -webkit-text-size-adjust: 100%;/*文字サイズ自動調整させない*/
+}
+
+ul{
+ list-style: none;
+}
+a img{ border:0;}
+a:hover img{
+ filter:alpha(opacity=80);
+ -moz-opacity:0.80;
+ opacity:0.80;
+}
+img{
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.clearfix:after {
+ content: ".";
+ display: block;
+ height: 0;
+ clear: both;
+ visibility: hidden;
+}
+.clearfix{ clear:both;}
+* html .clearfix{ height:1%;}
+
+
+a:link {
+ color:#000099;
+ text-decoration: none;
+}
+a:visited {
+ text-decoration: none;
+ color:#000099;
+}
+a:hover {
+ text-decoration: underline;
+ color: #000099;
+}
+a:active {
+ text-decoration: none;
+ color:#000099;
+}
+
+.pc_none{ display: none;}
+
+/* backgrond */
+.bg_white{ background:#FFF;}
+.bg_gray{ background: #f9f9f9;}
+.bg_navy{ background: #15165A;}
+.bg_texture{ background: url(https://www.f-academy.jp/info/event/images/retirement_forum/bg01.png);}
+
+/* margin */
+.m_auto{ margin: auto;}
+.m_0{ margin: 0;}
+
+.mt_10{ margin-top: 10px;}
+.mt_20{ margin-top: 20px;}
+.mt_30{ margin-top: 30px;}
+.mt_40{ margin-top: 40px;}
+.mt_50{ margin-top: 50px;}
+
+.mr_10{ margin-right: 10px;}
+.mr_20{ margin-right: 20px;}
+.mr_30{ margin-right: 30px;}
+.mr_40{ margin-right: 40px;}
+.mr_50{ margin-right: 50px;}
+
+.mb_10{ margin-bottom: 10px;}
+.mb_20{ margin-bottom: 20px;}
+.mb_30{ margin-bottom: 30px;}
+.mb_40{ margin-bottom: 40px;}
+.mb_50{ margin-bottom: 50px;}
+
+.ml_10{ margin-left: 10px;}
+.ml_20{ margin-left: 20px;}
+.ml_30{ margin-left: 30px;}
+.ml_40{ margin-left: 40px;}
+.ml_50{ margin-left: 50px;}
+
+/* border */
+.bd_0{ border: 0;}
+
+/* padding */
+.p_0{ padding: 0;}
+.p_10{ padding: 10px;}
+.p_20{ padding: 20px;}
+.p_30{ padding: 30px;}
+
+.pt_05{ padding-top: 5px;}
+.pt_10{ padding-top: 10px;}
+.pt_15{ padding-top: 15px;}
+.pt_20{ padding-top: 20px;}
+.pt_25{ padding-top: 25px;}
+.pt_30{ padding-top: 30px;}
+
+.pr_05{ padding-right: 5px;}
+.pr_10{ padding-right: 10px;}
+.pr_15{ padding-right: 15px;}
+.pr_20{ padding-right: 20px;}
+.pr_25{ padding-right: 25px;}
+.pr_30{ padding-right: 30px;}
+
+.pb_05{ padding-bottom: 5px;}
+.pb_10{ padding-bottom: 10px;}
+.pb_15{ padding-bottom: 15px;}
+.pb_20{ padding-bottom: 20px;}
+.pb_25{ padding-bottom: 25px;}
+.pb_30{ padding-bottom: 30px;}
+
+.pl_05{ padding-left: 5px;}
+.pl_10{ padding-left: 10px;}
+.pl_15{ padding-left: 15px;}
+.pl_20{ padding-left: 20px;}
+.pl_25{ padding-left: 25px;}
+.pl_30{ padding-left: 30px;}
+.pl_100{ padding-left: 100px;}
+
+/* width */
+.w_15per{ width: 15%;}
+.w_50per{ width: 50%;}
+.w_100per{ width: 100%;}
+
+.w_200{ width: 200px;}
+.w_300{ width: 300px;}
+
+/* block */
+.d_b{ display: block;}
+
+/* layout */
+.va_t{ vertical-align: top;;}
+
+/* text */
+.txt_normal{ font-weight: normal;}
+.txt_bold{ font-weight: bold;}
+
+.txt_left{ text-align:left;}
+.txt_center{ text-align:center;}
+.txt_right{ text-align:right;}
+
+.txt_x1_2{ font-size: 1.2em;}
+
+.txt_12{ font-size: 12px;}
+.txt_24{ font-size: 24px;}
+
+.lh_x1_5{ line-height: 1.5;}
+.lh_x2{ line-height: 2;}
+
+.lh_20{ line-height: 20px;}
+.lh_24{ line-height: 24px;}
+.lh_28{ line-height: 28px;}
+
+.Josefin{ font-family: 'Josefin Slab', serif;}
+
+.txt_gray,
+.txt_gray a,
+a.txt_gray{ color: #666;}
+
+
+.footertxt {
+ font-size: 12px;
+ line-height: 20px;
+    padding: 0 5%;
+}
+.footertxt a {
+ color: #45a8de;
+}
+
+.imgbox01 { margin: 0px;
+ padding: 0px;
+}
+p.midashi {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1.5em;
+    border-left: 10px solid rgb(28, 35, 109);
+    border-bottom: 1px solid rgb(28, 35, 109);
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .sp_none{ display:none;}
+    .pc_none{ display: inherit;}
+
+    .cont01 {
+        width: 100%!important;
+        margin-right: auto;
+        margin-left: auto;
+        background: #FFFFFF;
+    }
+    .cont01 .header {
+        width: 100%;
+        height: auto;
+        clear: both;
+    }
+    #volNo {
+        background: url(https://www.f-academy.jp/img2016/mail/bg01.png) no-repeat left -30px!important;
+        background-size:120px!important;
+        width: 60px!important;
+        padding-right: 10px!important;
+        color: #CCCCCC;
+        text-align:center!important;
+        font: 14px/20px 'Josefin Slab', serif!important;
+        padding-top: 15px!important;
+    }
+    .header td {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 0px;
+    }
+    .header #voltitle td{
+        padding: 10px 0px 0px;
+        margin-bottom: 0px;
+    }
+    #voltitle .title {
+        z-index: 10;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        width: 180px!important;
+    }
+    #voltitle .title02 {
+        width: 30px!important;
+    }
+    h1.title {
+        color: #15165A;
+        font-family: 'Josefin Slab', serif!important;
+    }
+
+    .txt_small {
+        color: #333333;
+        letter-spacing: 0px;
+        font: bold 15px/15px 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', 'MS P Gothic', sans-serif!important;
+        white-space: nowrap; 
+    }
+    .txt_small02 {
+        color: #333333;
+        letter-spacing: 0px;
+        font: bold 13px/13px 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', 'MS P Gothic', sans-serif!important;
+    }
+    #voltitle {
+        padding-bottom:0px;
+    }
+    #fctitle {
+        position: relative;
+        height: 30px;
+    }
+    #fctitle02 {
+        position: relative;
+        height: 30px;
+        width: 150px!important;
+    }
+
+    .imgbox01 img {
+        width: 100%;
+        height: auto;
+    }
+    .imgbox01 {
+        margin: 0px;
+        padding: 0px;
+    }
+    .bar {
+        color: #CCCCCC;
+        background: #15165A;
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-weight: bold;
+    }
+
+
+    .menu {
+        color: #000099;
+    }
+
+    #hottopic .title,
+    #schedule .title,
+    #seminarinfo .title,
+    #news .title,
+    #ourgroup .title {
+        font-size: 36px!important;
+        text-align: center;
+        line-height: 36px!important;
+    }
+    #schedule .title {
+        margin-bottom:10px;
+    }
+    #topic .title  {
+    font-size: 24px!important;
+    line-height: 30px;
+        font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', 'MS P Gothic', sans-serif!important;
+    }
+    #news .title {
+        
+        padding-bottom: 10px;
+    }
+    .txtbox01 {
+        padding: 20px 10px!important;
+    }
+    h2 {
+        font-size: 15px!important;
+        font-weight: bold;
+        padding-bottom: 10px;
+        line-height: 22px;
+    }
+    .txtbox01 p,
+    .txtbox02 p,
+    .txtbox05 p {
+        line-height: 20px;
+        padding-bottom: 10px;
+    }
+    .linkbox {
+        /*background: url(https://www.f-academy.jp/img2016/mail/icon01.png) no-repeat right center;
+        background-size:16px;
+        padding-right: 25px;
+        padding-left: 10px;*/
+    }
+
+    #financial .title  {
+        font-size: 36px!important;
+        line-height: 30px;
+    }
+    #financial {
+        margin-top: 0px;
+    }
+
+    .imgbox02 {
+        float: none!important;
+        width: 100%!important;
+        height: auto!important;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 5px;
+    }
+    .table01 .th01,
+    .table01 .td01{
+    display:block!important;
+    width:100%!important;
+    }
+    .tr01{
+    display:block!important;
+    }
+    .imgbox02 img {
+        height: auto;
+        width: 100%;
+    }
+    .txtbox02 {
+        padding-top: 20px!important;
+        padding-bottom: 10px;
+        padding-left: 0px!important;
+    }
+    .schedulebox {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .schedulebox tr {
+        width: 100%;
+        display: block;
+    }
+    .schedulebox th {
+        text-align: center!important;
+        width: 100%!important;
+        display: block;
+        padding-bottom: 10px!important;
+        padding-right: 0px!important;
+        border-right: none!important;
+    }
+
+    .schedulebox h2 {
+        font-size: 20px!important;
+        font-weight: normal;
+        color: #15165A;
+        line-height: 20px!important;
+    }
+    .schedulebox td {
+        display: block;
+        width: 95%!important;
+        padding-left: 5%!important;
+        border-left: 1px solid #15165A;
+    }
+    .schedulebox p {
+        font-size: 14px;
+    }
+    .schedulebox h3 {
+        font-weight: bold;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-size: 14px!important;
+    }
+    .schedulebox li {
+        background: url(https://www.f-academy.jp/img2016/mail/icon03.png) no-repeat left center;
+        background-size:10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+    }
+    .seminarbox {
+        margin-top: 30px;
+    }
+    .seminarbox th {
+        width: 70px!important;
+    }
+    .seminarbox td {
+        width: auto!important;
+    }
+    .seminarbox .icon a {
+        color: #FFFFFF;
+        background: #00B6D5;
+        display: block;
+        height: 50px!important;
+        width: 60px!important;
+        float: left;
+        text-align: center;
+        padding-top: 10px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        transition: 1s ease-in-out;
+    }
+    .seminarbox .icon a:hover {
+        background: #15165A;
+        text-decoration:none;
+    }
+    .seminarbox .icon span {
+        display: block;
+    }
+    .date {
+        font-size: 20px!important;
+        line-height: 20px!important;
+    }
+    .day {
+        font-size: 8px!important;
+        line-height: 8px!important;
+    }
+    .month {
+        font-size: 8px!important;
+        line-height: 8px!important;
+    }
+    .txtbox03 {
+        padding-top: 0px!important;
+        padding-left: 0px!important;
+    }
+    #seminarinfo h2 {
+        font-size: 15px!important;
+        padding-top: 0px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #1E2890;
+        margin-left: 0px!important;
+    }
+    .sub {
+        font-weight: bold;
+        line-height: 22px;
+        padding-top: 5px;
+        padding-left: 0px!important;
+    }
+    .related span {
+        font-size: 10px!important;
+        color: #FFFFFF;
+    }
+    .related a {
+        padding-top: 2px;
+        display: block;
+        font-size: 12px;
+    }
+    .txtbox04 p {
+        clear: both;
+        padding-top: 10px;
+        line-height: 20px;
+    }
+    #seminarinfo h2 a {
+        background: url(https://www.f-academy.jp/img2016/mail/icon02.png) no-repeat right center;
+        background-size:16px;
+        display: block;
+        padding-right: 20px;
+    }
+    .txtbox04 {
+        padding-top: 10px;
+        clear: both;
+        float: none!important;
+    }
+    #news { 
+    }
+
+    .txtbox05 {
+        padding-bottom: 0px;
+    }
+    #ourgroup .table02 {
+        margin-top: 20px!important;
+    }
+
+    .table02{
+        width: 100%;
+        display:block!important;
+    }
+    .table02 tr{
+        display:block!important;
+    }
+    #ourgroup th{
+        padding: 10px 0px!important;
+        width: 100%!important;
+        display: block!important;
+        border-bottom: 1px solid #CCCCCC;
+    }
+    #ourgroup li{
+        width: 100%!important;
+        padding: 10px 0px!important;
+        display:block!important;
+        border-bottom: 1px solid #CCCCCC;
+    }
+    .groupimg01 img {
+        width: 100%;
+        height: auto;
+    }
+    .grouptxt01 img {
+        height: auto;
+        width: 150px!important;
+    }
+    .grouptxt01 p {
+        line-height: 20px;
+        font-size: 12px;
+        color: #666666;
+    }
+    #footer h1 {
+        text-align: left;
+        padding-left:5%!important;
+    }
+    .table03 th{
+    width:100%!important;
+    display:block!important;
+    }
+    .table03 th ul {
+        float: none!important;
+        width: 95%!important;
+        margin-bottom: 0px!important;
+        padding-left: 5%!important;
+    }
+    .table03 th li {
+        font-size: 12px;
+        line-height: 20px;
+        color: #666666;
+    }
+    .table03 th li a {
+        font-weight: bold;
+        color: #666666;
+    }
+    #footer .snstable {
+        width: 150px;
+        margin:20px auto;
+    }
+    #footer td {
+        text-align: center;
+    }
+    #footer {
+        padding-bottom: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .header h1 img {
+        height: auto;
+        width: 200px;
+    }
+
+    .more th,
+    .more tr {
+        display: block;
+        width: 100%;
+    }
+    .more th {
+        text-align: left;
+        vertical-align: top;
+        padding-bottom: 10px;
+    }
+    .groupimg01 {
+        float: left;
+        width: 100px;
+    }
+    .grouptxt01 {
+        padding-left: 110px;
+    }
+    #footer h1 img {
+        width: 200px;
+    }
+    #footer td img {
+        height: auto;
+        width: 20px;
+    }
+    .hit50{
+    height:34px!important;
+    width:auto;
+    }
+    .hit40{
+    height:30px!important;
+    width:auto!important;
+
+    }
+    .hit30{
+    height:30px!important;
+    width:auto!important;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .imgbox02 { padding-right: 30px;}
+
+    .footertxt { text-align: center;}
+}
+-->
+</style> 
+</head> 
+<body class="bg_gray"> 
+<table width="600" border="0" cellspacing="0" cellpadding="0" class="cont01 bg_white m_auto"> 
+<tbody> 
+<tr> 
+<td> 
+<table border="0" cellspacing="0" cellpadding="0" class="header" width="100%"> 
+<tbody> 
+<tr class="m_0 p_0"> 
+<td class="p_0 pt_10 pr_10 pl_10"><a href="https://www.f-academy.jp/"> <img src="https://www.f-academy.jp/img2016/mail/stepmail_img/logo.png" alt="Financial Acadeny" class="w_300 bd_0 mb_20" /></a> </td> 
+</tr> 
+</tbody> 
+</table> <span class="imgbox01 p_0 m_0 d_b"><img src="https://www3.f-academy.jp/img/mail/weekly/20221220_main.jpg" width="100%" alt="お金の教養フェスティバル2023" /></span> </td> 
+</tr> 
+<tr> 
+<td class="pt_10 bg_navy"></td> 
+</tr> 
+<tr> 
+<td id="hottopic" class="bg_texture"> 
+<!--HptTopic本文--> 
+<div class="p_20"> 
+<h2 class="txt_bold txt_center lh_x2 txt_x1_2 p_0 pt_10 pb_30"> 「お金の教養フェスティバル2023」への申込みありがとうございます。<br /> 1月22日（日）のイベント開催まで『 残り3日 』と迫ってきました。<br /> 本年も大好評につき、会場は満席の予定です。<br />オンライン会場での参加となりますので、<br /> 開催日時や会場等お間違いのないよう、あらためてご確認ください。<br /> それではご来場お待ちしています。<br /> </h2> 
+<table class="bg_white m_auto w_100per"> 
+<tbody> 
+<tr> 
+<td class="p_20 w_15per">日時</td> 
+<td class="p_10 lh_x1_5">2022年1月22日（日）13:30～16:30（開場13:00）</td> 
+</tr> 
+<tr> 
+<td class="p_20 w_15per">会場</td> 
+<td class="p_10 lh_x1_5"> <br /><a href="https://us02web.zoom.us/j/83320833972?pwd=b1F0Q3V3ZnB6c1VNMU5MdGIzY3Z0Zz09">＞＞オンライン会場への入場はこちらから</a> <br />　　ID：833 2083 3972　パスワード：1111 <br />　　※開場時間（当日13時）になると、Zoom会場へ入場できます。 </td> 
+</tr> 
+</tbody> 
+</table> 
+<!--hottopic/end--> 
+</div> </td> 
+</tr> 
+<tr> 
+<td class="p_20 pt_30 m_0"> <p class="midashi">第1部　13:35～14:20<br />小林 正寿　 ／ Masatoshi Kobayashi</p> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table01"> 
+<tbody> 
+<tr class="tr01"> 
+<th align="center" class="imgbox02 w_200 pb_10" scope="row"> <img src="https://www.f-academy.jp/event/fes2023/images/img_kobayashi.jpg" alt="" width="200" /> </th> 
+<td class="td01"> 
+<div class="txtbox02"> 
+<h2 class="txt_bold pb_10 txt_24 lh_28">ミニマリスト気象予報士・小林流「人生の切り拓き方」</h2> 
+<p class="lh_24 pb_10">日本テレビ「ZIP!」のレギュラー出演をはじめ、バラエティ番組にも多数出演する気象予報士、小林正寿さん。自宅でも布団を持たずに床に直接寝たり、炊飯器から直接ご飯を食べたりと、超・ミニマリストとしての個性的な一面が話題ですが、その裏には気象予報士という仕事への熱い想いがあります。そんな小林さんがどのようにして気象予報士という仕事に行き着いたのか、どのような想いで日々と向き合っているのかをお話しいただくとともに、自分らしい人生を切り拓く方法に迫ります。</p> 
+</div> 
+<div class="clearfix"></div> </td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr>
+<!--第1部/end--> 
+<tr> 
+<td class="p_20 m_0"> <p class="midashi">第2部：14:20～15:00<br />馬渕 磨理子　 ／ Mariko Mabuchi</p> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table01"> 
+<tbody> 
+<tr class="tr01"> 
+<th align="center" class="imgbox02 w_200 pb_10" scope="row"> <img src="https://www.f-academy.jp/event/fes2023/images/img_mabuchi.jpg" alt="" width="200" /> </th> 
+<td class="td01"> 
+<div class="txtbox02"> 
+<h2 class="txt_bold pb_10 txt_24 lh_28">今日からできる「黒字転換2倍株」を見つける方法</h2> 
+<p class="lh_24 pb_10">京都大学公共政策大学院 修士課程を修了。トレーダーとして法人の資産運用を担う。その後、金融機関のシニアアナリスト、FUNDINNOで日本初のECFアナリストとして政策提言に関わる。フジテレビ「LiveNEWSα」、読売テレビ「ウェークアップ」でのレギュラー出演をはじめ、プレジデント、ダイヤモンド、Forbes JAPAN、SPA！など多数のメディアにも出演している。ラジオレギュラーに「しゃべくりカブカブ！」「馬渕・渡辺のビジトピ」。</p> 
+<br /> 
+</div> 
+<div class="clearfix"></div> </td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr>
+<!--第2部①/end--> 
+<tr> 
+<td class="p_20 m_0"> <p class="midashi">第3部：15:10～15:55<br />野瀬 大樹　 ／ Hiroki Nose</p> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table01"> 
+<tbody> 
+<tr class="tr01"> 
+<th align="center" class="imgbox02 w_200 pb_10" scope="row"> <img src="https://www.f-academy.jp/event/fes2023/images/img_nose.jpg" alt="" width="200" /> </th> 
+<td class="td01"> 
+<div class="txtbox02"> 
+<h2 class="txt_bold pb_10 txt_24 lh_28">インドから生中継！「人生も、投資も、あきらめない。」</h2> 
+<p class="lh_24 pb_10">「不動産投資スクール」の卒業生であり、「株式投資スクール」の講師でもある野瀬講師は、現在インドを拠点に、生きがいとしての仕事に取り組みながら、悠々自適な生活を送っています。そんな野瀬講師も、投資と出会うまでは、毎日終電で帰宅し、日曜日は寝るだけ、貯蓄もできない状態だったそう。どのようにしてそこから抜け出し、自由な生活を手にすることができたのか。リアルなストーリーを辿りながら、私たちがそれを実現するためのヒントを探っていきます。</p> 
+</div> 
+<div class="clearfix"></div> </td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr>
+<!--第3部/end--> 
+<tr> 
+<td class="p_20 m_0"> <p class="midashi">番外編：16:00～16:30<br />木村 謙吾　 ／ Kengo Kimura</p> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table01"> 
+<tbody> 
+<tr class="tr01"> 
+<th align="center" class="imgbox02 w_200 pb_10" scope="row"> <img src="https://www.f-academy.jp/event/fes2023/images/img_kimura.jpg" alt="" width="200" /> </th> 
+<td class="td01"> 
+<div class="txtbox02"> 
+<h2 class="txt_bold pb_10 txt_24 lh_28">自由に質問ができるフリートークルーム</h2> 
+<p class="lh_24 pb_10">第3部の聞き手として登壇する、ファイナンシャルアカデミー認定講師の木村講師に、お金に関する疑問や投資に関する悩みを直接質問できるフリートークルームを開放します。あなたのお金のもやもやを一気に解消しましょう。※ 時間、登壇者、講演プログラムなどは、変更になることがあります。</p> 
+</div> 
+<div class="clearfix"></div> </td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr>
+<!--第3部/end--> 
+<tr> 
+<td class="pb_20"> 
+<hr /> <h2 class="mt_30 mb_50 txt_center pl_15 pr_15 lh_x1_5">開催当日を迎える前にもお金の知識を「アップデート」しませんか。</h2> <p class="lh_24 pr_20 pl_20"> 私たち、ファイナンシャルアカデミーでは「お金」や「資産運用」の正しい知識とノウハウが身につく、無料体験セミナーを提供しています。無料体験セミナーは動画で受講することもできるので、再生や停止はもちろん、再生スピードの調整も可能。わからないところを繰り返し視聴したり、スキマ時間に視聴したり、倍速再生で一気に見たりと、自分のペースで受講することができます。</p> <p class="lh_24 p_20"> ラインナップも豊富で、不動産投資や、株式投資、投資信託といった資産運用の知識が学べるセミナーはもちろん、人生に関わるお金の問題を解決するセミナーや、定年後のお金の不安を解消するセミナーなど、自分の興味関心に合わせて選ぶことができますので、フェスティバル参加前の知識のアップデートにぴったりです。</p> <p class="txt_center pt_15 pb_25"><a href="https://www.f-academy.jp/school/webseminar/?psn=19182">＞＞無料体験セミナーの受講はこちら＜＜</a></p> </td> 
+</tr> 
+<!-- 以下フッター --> 
+<tr> 
+<td class="bar02 pt_05 bg_navy"></td> 
+</tr> 
+<tr> 
+<td id="footer" class="pt_20 pb_10"> <h1 class="txt_center"><a href="https://www.f-academy.jp/"><img src="https://www.f-academy.jp/img2016/mail/logo02.jpg" alt="Financial Academy" class="bd_0" /></a></h1> <p class="footertxt"> 東京都千代田区丸の内3-1-1<br /> E-mail :<a href="mailto: info@jfa.ac"> info@jfa.ac</a> <br class="pc_none" /> URL : <a href="https://www.f-academy.jp/">https://www.f-academy.jp/</a></p> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table03"> 
+<tbody> 
+<tr> 
+<th width="50%" class="txt_normal txt_left va_t" scope="col"> 
+<ul class="mb_20 pl_100"> 
+<li class="txt_gray txt_12 pt_20 lh_20">講座内容や受講に関する問合せ<br /> <a href="tel:0120140384" class="txt_gray txt_bold">0120-104-384</a>　受付時間：10時～19時 </li> 
+</ul> </th> 
+<th width="50%" class="txt_normal txt_left va_t" scope="col"> 
+<ul class="mb_20 pl_30"> 
+<li class="txt_gray txt_12 pt_20 lh_20">その他の問合せはこちら<br /> <a href="mailto:info@jfa.ac" class="txt_gray txt_bold">info@jfa.ac</a>　常時受付 </li> 
+</ul> </th> 
+</tr> 
+</tbody> 
+</table> 
+<div class="clearfix"></div> 
+<div class="txt_center"> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="snstable"> 
+<tbody> 
+<tr> 
+<td width="20%"></td> 
+<td width="20%" align="left"><a href="https://www.facebook.com/financialacademy/"><img src="https://www.f-academy.jp/img2016/mail/sns01.png" alt="facebook" width="32" height="28" /></a></td> 
+<td width="20%" align="left"><a href="https://twitter.com/facademy"><img src="https://www.f-academy.jp/img2016/mail/sns02.png" alt="twitter" width="32" height="28" /></a></td> 
+<td width="20%" align="left"><a href="https://www.instagram.com/financial_academy/"><img src="https://www.f-academy.jp/img2016/mail/sns04.png" alt="youtube" width="32" height="28" /></a></td> 
+</tr> 
+</tbody> 
+</table> 
+</div> </td> 
+</tr> 
+</tbody> 
+</table>  
+</body>
+</html>
